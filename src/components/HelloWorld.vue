@@ -12,7 +12,7 @@
               href="https://www.instagram.com/sespapara/?hl=pt-br"
               target="_blank"
             >Sespa</a> e os
-            <span>autores não são responsavéis pela verecidades dos mesmos</span>
+            <span>autores não são responsavéis pela veracidades dos mesmos</span>
           </p>
         </v-col>
         <v-col cols="12" md="3">
