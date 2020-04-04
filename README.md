@@ -1,19 +1,7 @@
-# qrcode
+# Portal Corona Virus Pará
 
-## Project setup
+## Description
 ```
-yarn install
+It's a personal project to show cases about state Pará, in Brazil
+The data are based from social media of health's responsible of the state and I can't guarantee the truth of same
 ```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
