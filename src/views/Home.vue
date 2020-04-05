@@ -1,11 +1,11 @@
 <template>
-  <div class="mx-12 mt-6">
+  <div class="mx-12 mt-2">
     <h5 class="mb-4">Dashboard</h5>
     <HelloWorld />
-    <v-row class="mt-10">
+    <v-row class="my-5">
       <v-col cols="12" md="3">
         <CardInfo
-          tituloNumero="46 casos"
+          tituloNumero="82 casos"
           tituloTipo="confirmados"
           subtitulo="até o dia 21/04/2020"
           icone="mdi-check"
@@ -23,7 +23,7 @@
       </v-col>
       <v-col cols="12" md="3">
         <CardInfo
-          tituloNumero="42 casos"
+          tituloNumero="116 casos"
           tituloTipo="análise"
           subtitulo="até o dia 21/04/2020"
           icone="mdi-report"
@@ -32,7 +32,7 @@
       </v-col>
       <v-col cols="12" md="3">
         <CardInfo
-          tituloNumero="952 casos"
+          tituloNumero="1027 casos"
           tituloTipo="descartados"
           subtitulo="até o dia 21/04/2020"
           icone="mdi-delete"
@@ -40,12 +40,8 @@
         />
       </v-col>
     </v-row>
-
     <v-row>
-      <v-col cols="12" md="8">
-        <v-tabs class="mb-2 mt-6">
-          <v-tab v-for="s in typeStatistics" :key="s" @click="selectTypeStatistics(s)">{{ s }}</v-tab>
-        </v-tabs>
+      <v-col cols="12" md="7">
         <v-data-table
           :headers="headers"
           :items="cases"
@@ -53,11 +49,49 @@
           class="elevation-1"
           v-if="selectedTypeStatistics == 'Lista de casos confirmados'"
         ></v-data-table>
-        <LineChart
-          :labels="Array.from(casesByDate.keys())"
-          :data="Array.from(casesByDate.values())"
-          v-if="selectedTypeStatistics == 'Timeline'"
-        />
+      </v-col>
+      <v-col cols="12" md="5">
+        <v-carousel
+          cycle
+          height="400"
+          show-arrows-on-hover="false"
+          hide-delimiter-background
+          interval="3000"
+        >
+          <v-carousel-item>
+            <v-sheet height="100%" color="white" class="p-6">
+              <v-row class="fill-height" align="center" justify="center">
+                <BarChart
+                  :labels="Array.from(casesByCity.keys())"
+                  :data="Array.from(casesByCity.values())"
+                  style="width: 80% "
+                />
+              </v-row>
+            </v-sheet>
+          </v-carousel-item>
+          <v-carousel-item>
+            <v-sheet height="100%" color="white" class="p-6">
+              <v-row class="fill-height" align="center" justify="center">
+                <LineChart
+                  :labels="Array.from(casesByDate.keys())"
+                  :data="Array.from(casesByDate.values())"
+                  style="width: 70%"
+                />
+              </v-row>
+            </v-sheet>
+          </v-carousel-item>
+          <v-carousel-item>
+            <v-sheet height="100%" color="white" class="p-6">
+              <v-row class="fill-height" align="center" justify="center">
+                <PieChart
+                  :labels="Array.from(casesBySex.keys())"
+                  :data="Array.from(casesBySex.values())"
+                  style="width: 60%"
+                />
+              </v-row>
+            </v-sheet>
+          </v-carousel-item>
+        </v-carousel>
       </v-col>
     </v-row>
   </div>
@@ -68,6 +102,8 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 import CardInfo from "@/components/CardInfo.vue";
 import LineChart from "@/components/LineChart.vue";
+import PieChart from "@/components/PieChart.vue";
+import BarChart from "@/components/BarChart.vue";
 
 import { Component, Prop, Vue } from "vue-property-decorator";
 
@@ -75,7 +111,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
   components: {
     HelloWorld,
     CardInfo,
-    LineChart
+    LineChart,
+    PieChart,
+    BarChart
   }
 })
 export default class Home extends Vue {
@@ -100,6 +138,7 @@ export default class Home extends Vue {
     { text: "Cidade", value: "cidade", width: 20 },
     { text: "Data informado", value: "data", width: 20 }
   ];
+
   cases = [
     {
       n: "1",
@@ -112,21 +151,21 @@ export default class Home extends Vue {
       n: "2",
       sexo: "Feminino",
       idade: 36,
-      cidade: "Não informado/ Não encontrado",
+      cidade: "Belém",
       data: new Date("Mar 20, 2020").toDateString()
     },
     {
       n: "3",
       sexo: "Feminino",
       idade: 44,
-      cidade: "Não informado/ Não encontrado",
+      cidade: "Belém",
       data: new Date("Mar 22, 2020").toDateString()
     },
     {
       n: "4",
       sexo: "Masculino",
       idade: 53,
-      cidade: "Não informado/ Não encontrado",
+      cidade: "Belém",
       data: new Date("Mar 22, 2020").toDateString()
     },
     {
@@ -626,12 +665,61 @@ export default class Home extends Vue {
       idade: 51,
       cidade: "Parauapebas",
       data: new Date("Apr 3, 2020").toDateString()
+    },
+    {
+      n: "76",
+      sexo: "Feminino",
+      idade: 46,
+      cidade: "Ananindeua",
+      data: new Date("Apr 4, 2020").toDateString()
+    },
+    {
+      n: "77",
+      sexo: "Feminino",
+      idade: 26,
+      cidade: "Marituba",
+      data: new Date("Apr 4, 2020").toDateString()
+    },
+    {
+      n: "78",
+      sexo: "Masculino",
+      idade: 50,
+      cidade: "Belém",
+      data: new Date("Apr 4, 2020").toDateString()
+    },
+    {
+      n: "79",
+      sexo: "Masculino",
+      idade: 22,
+      cidade: "Belém",
+      data: new Date("Apr 4, 2020").toDateString()
+    },
+    {
+      n: "80",
+      sexo: "Feminino",
+      idade: 56,
+      cidade: "Belém",
+      data: new Date("Apr 4, 2020").toDateString()
+    },
+    {
+      n: "81",
+      sexo: "Masculino",
+      idade: 28,
+      cidade: "Barcarena",
+      data: new Date("Apr 4, 2020").toDateString()
+    },
+    {
+      n: "82",
+      sexo: "Feminino",
+      idade: 32,
+      cidade: "Barcarena",
+      data: new Date("Apr 4, 2020").toDateString()
     }
   ];
 
   beforeMount() {
     var myMap = new Map();
-    this.casesByDate;
+    this.casesBySex;
   }
 
   get casesByDate() {
@@ -648,6 +736,38 @@ export default class Home extends Vue {
     }
 
     return casesByDate;
+  }
+
+  get casesBySex() {
+    var casesBySex = new Map();
+    for (let index = 0; index < this.cases.length; index++) {
+      if (casesBySex.get(this.cases[index].sexo) == undefined) {
+        casesBySex.set(this.cases[index].sexo, 1);
+      } else {
+        casesBySex.set(
+          this.cases[index].sexo,
+          casesBySex.get(this.cases[index].sexo) + 1
+        );
+      }
+    }
+
+    return casesBySex;
+  }
+
+  get casesByCity() {
+    var casesBySex = new Map();
+    for (let index = 0; index < this.cases.length; index++) {
+      if (casesBySex.get(this.cases[index].cidade) == undefined) {
+        casesBySex.set(this.cases[index].cidade, 1);
+      } else {
+        casesBySex.set(
+          this.cases[index].cidade,
+          casesBySex.get(this.cases[index].cidade) + 1
+        );
+      }
+    }
+
+    return casesBySex;
   }
 
   selectTypeStatistics(type: string) {

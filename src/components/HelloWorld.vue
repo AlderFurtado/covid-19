@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="12" md="9" class="intro">
+    <v-col cols="12" class="intro">
       <v-row>
         <v-col cols="12" md="9">
           <p>Seja bem-vindo ao</p>
