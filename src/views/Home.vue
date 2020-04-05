@@ -7,7 +7,7 @@
         <CardInfo
           tituloNumero="82 casos"
           tituloTipo="confirmados"
-          subtitulo="até o dia 21/04/2020"
+          subtitulo="até o dia 04/04/2020"
           icone="mdi-check"
           color="green"
         />
@@ -16,7 +16,7 @@
         <CardInfo
           tituloNumero="01 casos"
           tituloTipo="obito"
-          subtitulo="até o dia 21/04/2020"
+          subtitulo="até o dia 04/04/2020"
           icone="mdi-close"
           color="red"
         />
@@ -25,7 +25,7 @@
         <CardInfo
           tituloNumero="116 casos"
           tituloTipo="análise"
-          subtitulo="até o dia 21/04/2020"
+          subtitulo="até o dia 04/04/2020"
           icone="mdi-report"
           color="yellow"
         />
@@ -34,7 +34,7 @@
         <CardInfo
           tituloNumero="1027 casos"
           tituloTipo="descartados"
-          subtitulo="até o dia 21/04/2020"
+          subtitulo="até o dia 04/04/2020"
           icone="mdi-delete"
           color="grey"
         />
@@ -56,7 +56,7 @@
           height="400"
           show-arrows-on-hover="false"
           hide-delimiter-background
-          interval="3000"
+          interval="6000"
         >
           <v-carousel-item>
             <v-sheet height="100%" color="white" class="p-6">
@@ -94,6 +94,12 @@
         </v-carousel>
       </v-col>
     </v-row>
+    <v-footer padless>
+      <v-col class="text-center" cols="12">
+        {{ new Date().getFullYear() }} —
+        <strong>Portal Corona Virus</strong>
+      </v-col>
+    </v-footer>
   </div>
 </template>
 
