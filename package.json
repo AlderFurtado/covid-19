@@ -1,5 +1,5 @@
 {
-  "name": "Portal Corona Pará",
+  "name": "PortalCoronaPara",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "bootstrap-vue": "^2.9.0",
     "chart.js": "^2.9.3",
     "core-js": "^3.6.4",
+    "moment": "^2.24.0",
     "vash": "^0.13.0",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.0",

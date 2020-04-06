@@ -17,6 +17,7 @@ export default class BarChart extends Vue<Bar> {
       labels: this.labels,
       datasets: [
         {
+          backgroundColor: "#d04d56",
           label: "Casos por cidade",
           data: this.data
         }

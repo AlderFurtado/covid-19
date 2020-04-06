@@ -15,8 +15,12 @@ export default class LineChart extends Vue<Line> {
     // Overwriting base render method with actual data.
     this.renderChart({
       labels: this.labels,
+      backgroundColor: "#d04d56",
+
       datasets: [
         {
+          backgroundColor: "#d04d56",
+
           label: "Casos por data",
           data: this.data
         }

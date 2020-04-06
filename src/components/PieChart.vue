@@ -17,7 +17,7 @@ export default class PieChart extends Vue<Pie> {
       labels: this.labels,
       datasets: [
         {
-          backgroundColor: ["#535DEB", "#FF54EF"],
+          backgroundColor: ["#d04d56", "#ffddde"],
           label: "Casos por genêro",
           data: this.data
         }

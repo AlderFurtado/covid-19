@@ -5,7 +5,7 @@
     <v-row class="my-5">
       <v-col cols="12" md="3">
         <CardInfo
-          tituloNumero="82 casos"
+          tituloNumero="86 casos"
           tituloTipo="confirmados"
           subtitulo="até o dia 04/04/2020"
           icone="mdi-check"
@@ -23,7 +23,7 @@
       </v-col>
       <v-col cols="12" md="3">
         <CardInfo
-          tituloNumero="116 casos"
+          tituloNumero="97 casos"
           tituloTipo="análise"
           subtitulo="até o dia 04/04/2020"
           icone="mdi-report"
@@ -32,7 +32,7 @@
       </v-col>
       <v-col cols="12" md="3">
         <CardInfo
-          tituloNumero="1027 casos"
+          tituloNumero="1042 casos"
           tituloTipo="descartados"
           subtitulo="até o dia 04/04/2020"
           icone="mdi-delete"
@@ -42,6 +42,7 @@
     </v-row>
     <v-row>
       <v-col cols="12" md="7">
+        <p>Lista de casos até {{ cases[cases.length - 1].data }}</p>
         <v-data-table
           :headers="headers"
           :items="cases"
@@ -64,7 +65,7 @@
                 <BarChart
                   :labels="Array.from(casesByCity.keys())"
                   :data="Array.from(casesByCity.values())"
-                  style="width: 80% "
+                  style="width: 70% "
                 />
               </v-row>
             </v-sheet>
@@ -720,6 +721,34 @@ export default class Home extends Vue {
       idade: 32,
       cidade: "Barcarena",
       data: new Date("Apr 4, 2020").toDateString()
+    },
+    {
+      n: "83",
+      sexo: "Masculino",
+      idade: 39,
+      cidade: "Belém",
+      data: new Date("Apr 5, 2020").toDateString()
+    },
+    {
+      n: "84",
+      sexo: "Masculino",
+      idade: 62,
+      cidade: "Belém",
+      data: new Date("Apr 5, 2020").toDateString()
+    },
+    {
+      n: "85",
+      sexo: "Masculino",
+      idade: 42,
+      cidade: "Belém",
+      data: new Date("Apr 5, 2020").toDateString()
+    },
+    {
+      n: "86",
+      sexo: "Masculino",
+      idade: 51,
+      cidade: "Belém",
+      data: new Date("Apr 5, 2020").toDateString()
     }
   ];
 
