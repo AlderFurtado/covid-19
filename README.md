@@ -7,4 +7,4 @@ The data are based from social media of health's responsible of the state and I 
 ```
 
 ## Some picture
- <img src="./src/assets/print.png" alt="drawing" width="200"/> 
+ <img src="./src/assets/print.png" alt="drawing" width="700"/> 
